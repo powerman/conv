@@ -16,7 +16,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     timeout-minutes: 30
     env:
-      PATH: '${{ github.workspace }}/.gobincache:${{ env.PATH }}'
+      PATH: '${{ github.workspace }}/.gobincache:$PATH'
     steps:
       - uses: actions/setup-go@v2
         with:

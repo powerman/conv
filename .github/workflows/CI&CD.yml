@@ -9,13 +9,14 @@ on:
 
 env:
   GO_VERSION: '^1.16'
-  PATH: '${{ github.workspace }}/.gobincache:${{ env.PATH }}'
 
 jobs:
 
   test:
     runs-on: 'ubuntu-latest'
     timeout-minutes: 30
+    env:
+      PATH: '${{ github.workspace }}/.gobincache:${{ env.PATH }}'
     steps:
       - uses: actions/setup-go@v2
         with:

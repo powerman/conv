@@ -18,7 +18,7 @@ jobs:
     steps:
       - run: |
           echo $PATH
-          echo "::set-env name=PATH::$PWD/.gobincache:$PATH"
+          echo "PATH=$PWD/.gobincache:$PATH" >> $GITHUB_ENV
       - run: echo $PATH
       - uses: actions/setup-go@v2
         with:

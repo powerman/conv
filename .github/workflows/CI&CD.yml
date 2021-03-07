@@ -9,7 +9,6 @@ on:
 
 env:
   GO_VERSION: '^1.16'
-  PATH: '${{ github.workspace }}/.gobincache:${{ env.PATH }}'
 
 jobs:
 
@@ -36,6 +35,7 @@ jobs:
           restore-keys: |
             v3-test-${{ runner.os }}-
 
+      - run: echo "PATH=$PWD/.gobincache:$PATH" >> $GITHUB_ENV
       - run: go generate
       - run: golangci-lint run
       - run: go test

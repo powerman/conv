@@ -12,11 +12,11 @@ func MustNewDecimal(v string) *decimal.Decimal {
 }
 
 // ValueDecimal returns dereference of v or zero value if nil.
-func ValueDecimal(v *decimal.Decimal) decimal.Decimal {
-	if v == nil {
+func ValueDecimal(d *decimal.Decimal) decimal.Decimal {
+	if d == nil {
 		return decimal.Decimal{}
 	}
-	return *v
+	return *d
 }
 
 // NewSensitiveString returns ref to v.

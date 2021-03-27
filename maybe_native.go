@@ -15,6 +15,18 @@ func MaybeIntFromInt32(v *int32) *int {
 	return &m
 }
 
+// MaybeInt32FromInt converts Go types or panics on overflows.
+func MaybeInt32FromInt(v *int) *int32 {
+	if v == nil {
+		return nil
+	}
+	m := int32(*v)
+	if int(m) != *v {
+		panic(fmt.Sprintf("value %d overflows int32", *v))
+	}
+	return &m
+}
+
 // MustMaybeIntFromInt64 converts Go types or panics on overflow.
 func MustMaybeIntFromInt64(v *int64) *int {
 	if v == nil {

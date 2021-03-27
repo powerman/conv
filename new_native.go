@@ -1,5 +1,7 @@
 package conv
 
+import "time"
+
 // NewBool returns ref to v.
 func NewBool(v bool) *bool { return &v }
 
@@ -150,6 +152,17 @@ func NewString(v string) *string { return &v }
 func ValueString(v *string) string {
 	if v == nil {
 		return ""
+	}
+	return *v
+}
+
+// NewDuration returns ref to v.
+func NewDuration(v time.Duration) *time.Duration { return &v }
+
+// ValueDuration returns dereference of v or zero value if nil.
+func ValueDuration(v *time.Duration) time.Duration {
+	if v == nil {
+		return 0
 	}
 	return *v
 }

@@ -22,7 +22,7 @@ func MaybeDecimalFromString(v *string) (*decimal.Decimal, error) {
 	return &d, nil
 }
 
-// MustMaybeDecimalFromString converts decimal.
+// MustMaybeDecimalFromString converts decimal or panics if v is not decimal.
 func MustMaybeDecimalFromString(v *string) *decimal.Decimal {
 	if v == nil {
 		return nil

@@ -5,11 +5,11 @@ import "time"
 // TimeFromUnixMs converts unix milliseconds to time.
 // Returns zero time if v is 0 (instead of 1970-01-01).
 func TimeFromUnixMs(v int64) time.Time {
-	const ms = 1000
+	const mod = int64(time.Second / time.Millisecond)
 	if v == 0 {
 		return time.Time{}
 	}
-	return time.Unix(v/ms, (v%ms)*int64(time.Millisecond))
+	return time.Unix(v/mod, (v%mod)*int64(time.Millisecond))
 }
 
 // UnixMsFromTime converts time to unix milliseconds.

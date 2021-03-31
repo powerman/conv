@@ -1,6 +1,7 @@
 package conv
 
 import (
+	"database/sql"
 	"fmt"
 	"strconv"
 	"time"
@@ -381,4 +382,115 @@ func MaybeTimeFromUnixNano(v *int64) (t time.Time) {
 	}
 	const mod = int64(time.Second / time.Nanosecond)
 	return time.Unix(*v/mod, *v%mod)
+}
+
+// MaybeNullBool converts to sql Null.
+func MaybeNullBool(v *bool) sql.NullBool {
+	if v == nil {
+		return sql.NullBool{}
+	}
+	return sql.NullBool{
+		Bool:  *v,
+		Valid: true,
+	}
+}
+
+// MaybeBoolFromNull converts from sql Null.
+func MaybeBoolFromNull(n sql.NullBool) *bool {
+	if !n.Valid {
+		return nil
+	}
+	return &n.Bool
+}
+
+// MaybeNullFloat64 converts to sql Null.
+func MaybeNullFloat64(v *float64) sql.NullFloat64 {
+	if v == nil {
+		return sql.NullFloat64{}
+	}
+	return sql.NullFloat64{
+		Float64: *v,
+		Valid:   true,
+	}
+}
+
+// MaybeFloat64FromNull converts from sql Null.
+func MaybeFloat64FromNull(n sql.NullFloat64) *float64 {
+	if !n.Valid {
+		return nil
+	}
+	return &n.Float64
+}
+
+// MaybeNullInt32 converts to sql Null.
+func MaybeNullInt32(v *int32) sql.NullInt32 {
+	if v == nil {
+		return sql.NullInt32{}
+	}
+	return sql.NullInt32{
+		Int32: *v,
+		Valid: true,
+	}
+}
+
+// MaybeInt32FromNull converts from sql Null.
+func MaybeInt32FromNull(n sql.NullInt32) *int32 {
+	if !n.Valid {
+		return nil
+	}
+	return &n.Int32
+}
+
+// MaybeNullInt64 converts to sql Null.
+func MaybeNullInt64(v *int64) sql.NullInt64 {
+	if v == nil {
+		return sql.NullInt64{}
+	}
+	return sql.NullInt64{
+		Int64: *v,
+		Valid: true,
+	}
+}
+
+// MaybeInt64FromNull converts from sql Null.
+func MaybeInt64FromNull(n sql.NullInt64) *int64 {
+	if !n.Valid {
+		return nil
+	}
+	return &n.Int64
+}
+
+// MaybeNullString converts to sql Null.
+func MaybeNullString(v *string) sql.NullString {
+	if v == nil {
+		return sql.NullString{}
+	}
+	return sql.NullString{
+		String: *v,
+		Valid:  true,
+	}
+}
+
+// MaybeStringFromNull converts from sql Null.
+func MaybeStringFromNull(n sql.NullString) *string {
+	if !n.Valid {
+		return nil
+	}
+	return &n.String
+}
+
+// MaybeNullTime converts to sql Null.
+func MaybeNullTime(v time.Time) sql.NullTime {
+	if v.IsZero() {
+		return sql.NullTime{}
+	}
+	return sql.NullTime{
+		Time:  v,
+		Valid: true,
+	}
+}
+
+// MaybeTimeFromNull converts from sql Null.
+func MaybeTimeFromNull(n sql.NullTime) time.Time {
+	return n.Time
 }

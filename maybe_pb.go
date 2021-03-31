@@ -113,8 +113,8 @@ func MaybeUInt32(wkt *wrapperspb.UInt32Value) *uint32 {
 	return &wkt.Value
 }
 
-// MaybeUInt32Value converts to protobuf WKT.
-func MaybeUInt32Value(v *uint32) *wrapperspb.UInt32Value {
+// MaybePbUInt32 converts to protobuf WKT.
+func MaybePbUInt32(v *uint32) *wrapperspb.UInt32Value {
 	if v == nil {
 		return nil
 	}
@@ -129,8 +129,8 @@ func MaybeUInt64(wkt *wrapperspb.UInt64Value) *uint64 {
 	return &wkt.Value
 }
 
-// MaybeUInt64Value converts to protobuf WKT.
-func MaybeUInt64Value(v *uint64) *wrapperspb.UInt64Value {
+// MaybePbUInt64 converts to protobuf WKT.
+func MaybePbUInt64(v *uint64) *wrapperspb.UInt64Value {
 	if v == nil {
 		return nil
 	}

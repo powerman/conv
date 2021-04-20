@@ -5,7 +5,7 @@ go 1.16
 require (
 	github.com/golangci/golangci-lint v1.37.1
 	github.com/powerman/check v1.3.1
-	github.com/powerman/sensitive v0.0.5
+	github.com/powerman/sensitive v0.0.6
 	github.com/shopspring/decimal v1.2.0
 	google.golang.org/protobuf v1.25.0
 )

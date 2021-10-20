@@ -6,6 +6,6 @@ require (
 	github.com/golangci/golangci-lint v1.37.1
 	github.com/powerman/check v1.3.1
 	github.com/powerman/sensitive v0.0.5
-	github.com/shopspring/decimal v1.2.0
+	github.com/shopspring/decimal v1.3.1
 	google.golang.org/protobuf v1.25.0
 )

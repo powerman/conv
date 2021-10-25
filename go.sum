@@ -333,8 +333,8 @@ github.com/polyfloyd/go-errorlint v0.0.0-20201127212506-19bd8db6546f/go.mod h1:w
 github.com/posener/complete v1.1.1/go.mod h1:em0nMJCgc9GFtwrmVmEMR/ZL6WyhyjMBndrE9hABlRI=
 github.com/powerman/check v1.3.1 h1:86xiEjMNn0K4b3bhQsLfrLqJb0DWLXHBK3wBd5PoJH4=
 github.com/powerman/check v1.3.1/go.mod h1:k/8NCUQwepaKJKctBBKjQo84jvGEvKiumD9pDl87RB0=
-github.com/powerman/sensitive v0.0.5 h1:uwzqom28ZdSLbiuFMjR9nJPfu/SjUIbTZSAgawvzi2E=
-github.com/powerman/sensitive v0.0.5/go.mod h1:BT3bBXUqTDKM13MXlYvN4Csg9WXSZblJ12mGgHAY/wU=
+github.com/powerman/sensitive v0.0.7 h1:Q/6ojImT7Cz8X/MMz8CA1P5czfCkyv+f7EsYdEG266M=
+github.com/powerman/sensitive v0.0.7/go.mod h1:mXaPI6GEpBB92RtCP5EyFYsy73NZS2I2S/NYfc5gvx8=
 github.com/prometheus/client_golang v0.9.1/go.mod h1:7SWBe2y4D6OKWSNQJUaRYU/AaXPKyh/dDVn+NZz0KFw=
 github.com/prometheus/client_golang v0.9.3/go.mod h1:/TN21ttK/J9q6uSwhBd54HahCDft0ttaMvbicHlPoso=
 github.com/prometheus/client_model v0.0.0-20180712105110-5c3871d89910/go.mod h1:MbSGuTsp3dbXC40dX6PRTWyKYBIrTGTE9sqQNg2J8bo=

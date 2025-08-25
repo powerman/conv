@@ -46,9 +46,19 @@ func TestMaybeIntFromUInt64(tt *testing.T) {
 	}{
 		{nil, nil, nil},
 		{conv.NewUInt64(0), conv.NewInt(0), nil},
-		{conv.NewUInt64(math.MaxInt64), conv.NewInt(math.MaxInt64), nil},
-		{conv.NewUInt64(math.MaxInt64 + 1), nil, strconv.ErrRange},
+	}
+	mathMaxInt64 := uint64(math.MaxInt64)
+	tests64 := []struct {
+		given   *uint64
+		want    *int
+		wantErr error
+	}{
+		{conv.NewUInt64(mathMaxInt64), conv.NewInt(int(mathMaxInt64)), nil},
+		{conv.NewUInt64(mathMaxInt64 + 1), nil, strconv.ErrRange},
 		{conv.NewUInt64(math.MaxUint64), nil, strconv.ErrRange},
+	}
+	if strconv.IntSize == 64 {
+		tests = append(tests, tests64...)
 	}
 	for _, tc := range tests {
 		t.Run("", func(tt *testing.T) {

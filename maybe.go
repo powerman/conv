@@ -1,3 +1,4 @@
+//nolint:nilnil // Valid in this context.
 package conv
 
 import "github.com/shopspring/decimal"

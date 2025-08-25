@@ -1,3 +1,4 @@
+//nolint:nilnil // Valid in this context.
 package conv
 
 import (
@@ -21,7 +22,7 @@ func MaybeInt8FromInt(v *int) (*int8, error) {
 	if v == nil {
 		return nil, nil
 	}
-	m := int8(*v)
+	m := int8(*v) //nolint:gosec // False positive.
 	if int(m) != *v {
 		return nil, fmt.Errorf("int8 %w: %d", strconv.ErrRange, *v)
 	}
@@ -51,7 +52,7 @@ func MaybeInt16FromInt(v *int) (*int16, error) {
 	if v == nil {
 		return nil, nil
 	}
-	m := int16(*v)
+	m := int16(*v) //nolint:gosec // False positive.
 	if int(m) != *v {
 		return nil, fmt.Errorf("int16 %w: %d", strconv.ErrRange, *v)
 	}
@@ -81,7 +82,7 @@ func MaybeInt32FromInt(v *int) (*int32, error) {
 	if v == nil {
 		return nil, nil
 	}
-	m := int32(*v)
+	m := int32(*v) //nolint:gosec // False positive.
 	if int(m) != *v {
 		return nil, fmt.Errorf("int32 %w: %d", strconv.ErrRange, *v)
 	}
@@ -171,7 +172,7 @@ func MaybeIntFromUInt64(v *uint64) (*int, error) {
 	if v == nil {
 		return nil, nil
 	}
-	m := int(*v)
+	m := int(*v) //nolint:gosec // False positive.
 	if m < 0 || uint64(m) != *v {
 		return nil, fmt.Errorf("uint64 %w: %d", strconv.ErrRange, *v)
 	}

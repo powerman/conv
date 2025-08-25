@@ -26,7 +26,6 @@ func TestMaybeInt8FromString(tt *testing.T) {
 		{conv.NewString("1234"), nil, strconv.ErrRange},
 	}
 	for _, tc := range tests {
-		tc := tc
 		t.Run("", func(tt *testing.T) {
 			t := check.T(tt)
 			res, err := conv.MaybeInt8FromString(tc.given)
@@ -52,7 +51,6 @@ func TestMaybeIntFromUInt64(tt *testing.T) {
 		{conv.NewUInt64(math.MaxUint64), nil, strconv.ErrRange},
 	}
 	for _, tc := range tests {
-		tc := tc
 		t.Run("", func(tt *testing.T) {
 			t := check.T(tt)
 			res, err := conv.MaybeIntFromUInt64(tc.given)
@@ -68,9 +66,9 @@ func TestMaybeUnixFromTime(tt *testing.T) {
 
 	var (
 		tZero   time.Time
-		tSecond = time.Date(2021, 1, 2, 3, 4, 5, 0, time.UTC)
-		tMilli  = time.Date(2021, 1, 2, 3, 4, 5, 123000000, time.UTC)
-		tNano   = time.Date(2021, 1, 2, 3, 4, 5, 123456789, time.UTC)
+		tSecond = time.Date(2021, time.January, 2, 3, 4, 5, 0, time.UTC)
+		tMilli  = time.Date(2021, time.January, 2, 3, 4, 5, 123000000, time.UTC)
+		tNano   = time.Date(2021, time.January, 2, 3, 4, 5, 123456789, time.UTC)
 	)
 
 	t.Nil(conv.MaybeUnixFromTime(tZero))

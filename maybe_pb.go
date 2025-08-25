@@ -1,3 +1,4 @@
+//nolint:nilnil // Valid in this context.
 package conv
 
 import (
@@ -175,7 +176,7 @@ func MaybeDecimal(wkt *wrapperspb.StringValue) (*decimal.Decimal, error) {
 	if wkt == nil {
 		return nil, nil
 	}
-	d, err := decimal.NewFromString(wkt.Value)
+	d, err := decimal.NewFromString(wkt.GetValue())
 	if err != nil {
 		return nil, err
 	}

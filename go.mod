@@ -6,7 +6,7 @@ require (
 	github.com/powerman/check v1.9.0
 	github.com/powerman/sensitive v0.0.7
 	github.com/shopspring/decimal v1.4.0
-	google.golang.org/protobuf v1.36.8
+	google.golang.org/protobuf v1.36.9
 )
 
 require (

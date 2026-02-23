@@ -17,7 +17,7 @@ func MaybeIntFromInt8(v *int8) *int {
 	return &m
 }
 
-// MaybeInt8FromInt converts Go types or returns strconv.ErrRange.
+// MaybeInt8FromInt converts Go types or returns [strconv.ErrRange].
 func MaybeInt8FromInt(v *int) (*int8, error) {
 	if v == nil {
 		return nil, nil
@@ -47,7 +47,7 @@ func MaybeIntFromInt16(v *int16) *int {
 	return &m
 }
 
-// MaybeInt16FromInt converts Go types or returns strconv.ErrRange.
+// MaybeInt16FromInt converts Go types or returns [strconv.ErrRange].
 func MaybeInt16FromInt(v *int) (*int16, error) {
 	if v == nil {
 		return nil, nil
@@ -77,7 +77,7 @@ func MaybeIntFromInt32(v *int32) *int {
 	return &m
 }
 
-// MaybeInt32FromInt converts Go types or returns strconv.ErrRange.
+// MaybeInt32FromInt converts Go types or returns [strconv.ErrRange].
 func MaybeInt32FromInt(v *int) (*int32, error) {
 	if v == nil {
 		return nil, nil
@@ -98,7 +98,7 @@ func MustMaybeInt32FromInt(v *int) *int32 {
 	return m
 }
 
-// MaybeIntFromInt64 converts Go types or returns strconv.ErrRange.
+// MaybeIntFromInt64 converts Go types or returns [strconv.ErrRange].
 func MaybeIntFromInt64(v *int64) (*int, error) {
 	if v == nil {
 		return nil, nil
@@ -337,8 +337,8 @@ func MaybeUnixFromTime(t time.Time) *int64 {
 	if t.IsZero() {
 		return nil
 	}
-	v := t.Unix()
-	return &v
+	vSec := t.Unix()
+	return &vSec
 }
 
 // MaybeTimeFromUnix converts seconds to time or nil to zero time.
@@ -372,8 +372,8 @@ func MaybeUnixNanoFromTime(t time.Time) *int64 {
 	if t.IsZero() {
 		return nil
 	}
-	v := t.UnixNano()
-	return &v
+	vNano := t.UnixNano()
+	return &vNano
 }
 
 // MaybeTimeFromUnixNano converts nanoseconds to time or nil to zero time.

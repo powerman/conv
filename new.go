@@ -1,7 +1,6 @@
 package conv
 
 import (
-	"github.com/powerman/sensitive"
 	"github.com/shopspring/decimal"
 )
 
@@ -17,15 +16,4 @@ func ValueDecimal(d *decimal.Decimal) decimal.Decimal {
 		return decimal.Decimal{}
 	}
 	return *d
-}
-
-// NewSensitiveString returns ref to v.
-func NewSensitiveString(v sensitive.String) *sensitive.String { return &v }
-
-// ValueSensitiveString returns dereference of v or zero value if nil.
-func ValueSensitiveString(v *sensitive.String) sensitive.String {
-	if v == nil {
-		return ""
-	}
-	return *v
 }

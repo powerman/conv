@@ -11,8 +11,7 @@ import (
 	"github.com/powerman/conv"
 )
 
-func TestMaybeInt8FromString(tt *testing.T) {
-	t := check.T(tt)
+func TestMaybeInt8FromString(t *testing.T) {
 	t.Parallel()
 
 	tests := []struct {
@@ -27,7 +26,8 @@ func TestMaybeInt8FromString(tt *testing.T) {
 	}
 	for _, tc := range tests {
 		t.Run("", func(tt *testing.T) {
-			t := check.T(tt)
+			tt.Parallel()
+			t := check.Must(tt)
 			res, err := conv.MaybeInt8FromString(tc.given)
 			t.Err(err, tc.wantErr)
 			t.DeepEqual(res, tc.want)
@@ -35,8 +35,7 @@ func TestMaybeInt8FromString(tt *testing.T) {
 	}
 }
 
-func TestMaybeIntFromUInt64(tt *testing.T) {
-	t := check.T(tt)
+func TestMaybeIntFromUInt64(t *testing.T) {
 	t.Parallel()
 
 	tests := []struct {
@@ -62,7 +61,8 @@ func TestMaybeIntFromUInt64(tt *testing.T) {
 	}
 	for _, tc := range tests {
 		t.Run("", func(tt *testing.T) {
-			t := check.T(tt)
+			tt.Parallel()
+			t := check.Must(tt)
 			res, err := conv.MaybeIntFromUInt64(tc.given)
 			t.Err(err, tc.wantErr)
 			t.DeepEqual(res, tc.want)
@@ -71,8 +71,8 @@ func TestMaybeIntFromUInt64(tt *testing.T) {
 }
 
 func TestMaybeUnixFromTime(tt *testing.T) {
-	t := check.T(tt)
-	t.Parallel()
+	tt.Parallel()
+	t := check.Must(tt)
 
 	var (
 		tZero   time.Time

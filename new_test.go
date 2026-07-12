@@ -10,8 +10,8 @@ import (
 )
 
 func TestValueDecimal(tt *testing.T) {
-	t := check.T(tt)
-	t.Parallel()
+	tt.Parallel()
+	t := check.Must(tt)
 
 	d := conv.ValueDecimal(nil)
 	t.Zero(d)

@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0] - 2026-07-12
+
+### 📦️ Dependencies
+
+- **(deps)** Drop sensitive dependency, migrate to check v1.13 API by @powerman in [e7009f3]
+
+[0.7.0]: https://github.com/powerman/conv/compare/v0.6.2..v0.7.0
+[e7009f3]: https://github.com/powerman/conv/commit/e7009f39013c29d0dda2368c000f59b4237bf6ea
+
 ## [0.6.2] - 2026-04-07
 
 ### 📦️ Dependencies
@@ -26,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🚀 Added
 
-- Add sql MaybeNull* and Maybe*FromNull by @powerman in [2d5686f]
+- Add sql `MaybeNull*` and `Maybe*FromNull` by @powerman in [2d5686f]
 
 [0.6.0]: https://github.com/powerman/conv/compare/v0.5.0..v0.6.0
 [2d5686f]: https://github.com/powerman/conv/commit/2d5686f496fccad0dd365a4c8c88d2cd9f76294f
@@ -35,7 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🚀 Added
 
-- Add a lot of complement Maybe* by @powerman in [3d6fce8]
+- Add a lot of complement `Maybe*` by @powerman in [3d6fce8]
 
 [0.5.0]: https://github.com/powerman/conv/compare/v0.4.1..v0.5.0
 [3d6fce8]: https://github.com/powerman/conv/commit/3d6fce8c1bd2b7561e80f9a05be3e7f5b9abcb3d
@@ -73,7 +82,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🚀 Added
 
-- Add *Maybe*Decimal* by @powerman in [2cd7482]
+- Add `*Maybe*Decimal*` by @powerman in [2cd7482]
 
 [0.2.0]: https://github.com/powerman/conv/compare/%40%7B10year%7D..v0.2.0
 [2cd7482]: https://github.com/powerman/conv/commit/2cd7482b36279f170e4f4b8cd20c8bb678929774

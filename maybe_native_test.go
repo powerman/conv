@@ -21,7 +21,7 @@ func TestMaybeInt8FromString(t *testing.T) {
 	}{
 		{nil, nil, nil},
 		{new(""), nil, strconv.ErrSyntax},
-		{new("-42"), conv.NewInt8(-42), nil},
+		{new("-42"), new(int8(-42)), nil},
 		{new("1234"), nil, strconv.ErrRange},
 	}
 	for _, tc := range tests {
@@ -44,7 +44,7 @@ func TestMaybeIntFromUInt64(t *testing.T) {
 		wantErr error
 	}{
 		{nil, nil, nil},
-		{conv.NewUInt64(0), new(0), nil},
+		{new(uint64(0)), new(0), nil},
 	}
 	mathMaxInt64 := uint64(math.MaxInt64)
 	tests64 := []struct {
@@ -54,7 +54,7 @@ func TestMaybeIntFromUInt64(t *testing.T) {
 	}{
 		{new(mathMaxInt64), new(int(mathMaxInt64)), nil},
 		{new(mathMaxInt64 + 1), nil, strconv.ErrRange},
-		{conv.NewUInt64(math.MaxUint64), nil, strconv.ErrRange},
+		{new(uint64(math.MaxUint64)), nil, strconv.ErrRange},
 	}
 	if strconv.IntSize == 64 {
 		tests = append(tests, tests64...)

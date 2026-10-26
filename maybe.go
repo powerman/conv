@@ -8,7 +8,7 @@ func MaybeStringFromDecimal(d *decimal.Decimal) *string {
 	if d == nil {
 		return nil
 	}
-	return NewString(d.String())
+	return new(d.String())
 }
 
 // MaybeDecimalFromString converts decimal.
